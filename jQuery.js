@@ -12,13 +12,13 @@ $(document).on("keypress", function () {
   }
 });
 
-$(document).on("click", function() {
+$(document).on("click", function () {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
-})
+});
 
 $(".btn").on("click", function () {
   const userChosenColour = $(this).attr("id");
@@ -31,7 +31,7 @@ $(".btn").on("click", function () {
 
 function checkAnswer(currentLevel) {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-    console.log(`Success in level ${currentLevel}`)
+    console.log(`Success in level ${currentLevel}`);
     if (userClickedPattern.length === gamePattern.length) {
       setTimeout(function () {
         nextSequence();
